@@ -1,0 +1,37 @@
+﻿@Styles.Render("~/Content/angular-ui")
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>Product List</h2>
+<div class="row" ng-app="ListProduct">
+    <div ng-controller="ListProductCtrl">
+        <table class="table">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                <th>
+                    Qty
+                </th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="product in products">
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.qty}}</td>
+            </tr>
+        </table>
+        <pagination total-items="totalItems" ng-model="pagingOptions.currentPage" max-size="5" class="pagination-sm" boundary-links="true" rotate="false"
+                    items-per-page="pagingOptions.pageSize"
+                    ng-change="pageChanged()"
+                    num-pages="numPages"></pagination>
+
+    </div>
+</div>
+@section Scripts {
+    <script src="~/Angular/ProductFactory.js"></script>
+    <script src="~/Angular/ListCtrl.js"></script>
+}
