@@ -27,12 +27,10 @@ namespace AngularWebAPIPagination
                  "~/Scripts/angular-ui/ui-bootstrap.js",
                  "~/Scripts/angular-ui/ui-bootstrap-tpls.js"
              ));
-            bundles.Add(new StyleBundle("~/Content/angular-ui").Include(
-                    "~/Content/ui-bootstrap-csp.css"
-                ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                       "~/Content/ui-bootstrap-csp.css",
                       "~/Content/site.css"));
         }
     }

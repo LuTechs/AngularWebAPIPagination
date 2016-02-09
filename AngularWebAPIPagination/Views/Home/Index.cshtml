@@ -24,10 +24,10 @@
                 <td>{{product.qty}}</td>
             </tr>
         </table>
-        <pagination total-items="totalItems" ng-model="pagingOptions.currentPage" max-size="5" class="pagination-sm" boundary-links="true" rotate="false"
+        <uib-pagination  total-items="totalItems" ng-model="pagingOptions.currentPage" max-size="5" class="pagination-sm" boundary-links="true" rotate="false"
                     items-per-page="pagingOptions.pageSize"
                     ng-change="pageChanged()"
-                    num-pages="numPages"></pagination>
+                    num-pages="numPages"></uib-pagination>
 
     </div>
 </div>
