@@ -6,8 +6,7 @@ namespace AngularWebAPIPagination.Helpers
     {
         public static int Count(int totalRecord, int pageSize)
         {
-            
-            return Convert.ToInt16(Math.Ceiling( (double)totalRecord / pageSize));
+            return Convert.ToInt16(Math.Ceiling((double) totalRecord/pageSize));
         }
     }
 }

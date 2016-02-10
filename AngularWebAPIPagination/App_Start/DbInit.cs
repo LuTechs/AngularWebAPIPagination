@@ -1,27 +1,23 @@
-using System;
+﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using AngularWebAPIPagination.Models;
 
-namespace AngularWebAPIPagination.Migrations
+namespace AngularWebAPIPagination
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
+    public class DbInit:CreateDatabaseIfNotExists<ApplicationDbContext>
     {
-        public Configuration()
-        {
-            AutomaticMigrationsEnabled = true;
-        }
-
         protected override void Seed(ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            base.Seed(context);
             var random = new Random();
-            for (var i = 0; i < 1000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 context.Products.AddOrUpdate(p => p.Id, new Product
                 {
                     Name = "Product " + i,
-                    Price = 2*i,
-                    Qty = 3*i,
+                    Price = random.Next(1,100) * i,
+                    Qty = random.Next(1, 100) * i,
                     Date = DateTime.Now.AddDays(random.Next(1, 100))
                 });
             }

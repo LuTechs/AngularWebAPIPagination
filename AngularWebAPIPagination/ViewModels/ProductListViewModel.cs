@@ -3,7 +3,6 @@ using AngularWebAPIPagination.Models;
 
 namespace AngularWebAPIPagination.ViewModels
 {
-
     public class ProductListJsonViewModel
     {
         public int PageCount { get; set; }
